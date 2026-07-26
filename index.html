@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Village Milk Co-op — Register Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<div class="topbar"></div>
+ 
+<nav class="navbar">
+  <div class="brand">
+    <span class="brand-icon">💧</span>
+    <span class="brand-name">Village Milk Co-op</span>
+  </div>
+  <div class="nav-link" id="navHome">Dashboard</div>
+</nav>
+ 
+<!-- DASHBOARD -->
+<main class="page" id="dashboard">
+ 
+  <div class="page-head">
+    <h1>Register Dashboard</h1>
+    <p>Monitor collections, payments, and risk assessments.</p>
+  </div>
+ 
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-top"><span class="stat-label">Total Litres</span><span>💧</span></div>
+      <div class="stat-value" id="statLitres">0 L</div>
+    </div>
+    <div class="stat">
+      <div class="stat-top"><span class="stat-label">Total Amount</span><span>🧾</span></div>
+      <div class="stat-value" id="statAmount">₹0.00</div>
+    </div>
+    <div class="stat">
+      <div class="stat-top"><span class="stat-label">Active Members</span><span>👥</span></div>
+      <div class="stat-value" id="statMembers">0</div>
+    </div>
+    <div class="stat">
+      <div class="stat-top"><span class="stat-label">High Risk Predictions</span><span>⚠️</span></div>
+      <div class="stat-value danger" id="statRisk">0</div>
+    </div>
+  </section>
+ 
+  <section class="card">
+    <div class="card-head">
+      <h2>Collection Records</h2>
+      <div class="controls">
+        <div class="search">
+          <span>🔍</span>
+          <input type="text" id="searchBox" placeholder="Search member name or ID...">
+        </div>
+        <select id="sessionFilter">
+          <option value="all">All Sessions</option>
+          <option value="Morning">Morning</option>
+          <option value="Evening">Evening</option>
+        </select>
+        <select id="paymentFilter">
+          <option value="all">All Payments</option>
+          <option value="On-Time">On-Time</option>
+          <option value="Delayed">Delayed</option>
+        </select>
+        <select id="riskFilter">
+          <option value="all">All Risks</option>
+          <option value="Low Risk">Low Risk</option>
+          <option value="High Risk">High Risk</option>
+        </select>
+      </div>
+    </div>
+ 
+    <div class="table-wrap" id="tableWrap">
+      <div class="loading">Loading records...</div>
+    </div>
+ 
+    <div class="count" id="countBar">Showing 0 of 0 records</div>
+  </section>
+ 
+  <section class="card">
+    <div class="card-head">
+      <h2>All Members</h2>
+      <p>Click any member to see their full statement.</p>
+    </div>
+    <div class="members" id="membersGrid"></div>
+  </section>
+ 
+</main>
+ 
+<!-- PROFILE -->
+<main class="page" id="profile" style="display:none;">
+ 
+  <div class="back" id="backBtn">&larr; Back to Dashboard</div>
+ 
+  <div class="profile-top">
+    <div class="profile-card">
+      <h2>👤 Member Profile</h2>
+      <div class="field"><span>Name</span><b id="pName">—</b></div>
+      <div class="field"><span>Member ID</span><br><span class="chip" id="pId">—</span></div>
+    </div>
+ 
+    <div class="summary">
+      <h2>Statement Summary</h2>
+      <div class="summary-row">
+        <div><span class="label">📈 Litres</span><span class="val" id="pLitres">0 L</span></div>
+        <div><span class="label">Amount Owed</span><span class="val green" id="pAmount">₹0.00</span></div>
+        <div><span class="label">✅ On Time</span><span class="val" id="pOnTime">0 (0%)</span></div>
+        <div><span class="label">🕒 Delayed</span><span class="val" id="pDelayed">0</span></div>
+      </div>
+    </div>
+  </div>
+ 
+  <section class="card">
+    <div class="card-head"><h2>📅 Collection History</h2></div>
+    <div class="table-wrap" id="profileTableWrap"></div>
+  </section>
+ 
+</main>
+ 
+<!-- CHAT -->
+<button class="chat-btn" id="chatBtn">💬</button>
+ 
+<div class="chat" id="chatBox">
+  <div class="chat-head">
+    <span>Milk Register Assistant</span>
+    <button id="chatClose">✕</button>
+  </div>
+  <div class="chat-log" id="chatLog">
+    <div class="msg bot">Hi! Ask me things like: "total milk for Velu M.", "balance for M009",
+    "payment status of Geetha N.", or "how many delayed payments".</div>
+  </div>
+  <div class="chat-form">
+    <input type="text" id="chatInput" placeholder="Type your question...">
+    <button id="chatSend">➤</button>
+  </div>
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
